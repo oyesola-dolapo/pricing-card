@@ -33,7 +33,7 @@ const PricingCard = ({ card }) => {
                 key={benefit}
                 className={`${styles.card__benefit} center-horizontal`}>
                 <img
-                  src="/public/icons/check.png"
+                  src="/icons/check.png"
                   className={styles.card__benefitIcon}
                 />
                 {benefit}
