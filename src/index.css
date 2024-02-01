@@ -1,0 +1,38 @@
+*{
+  box-sizing: border-box;
+  font-family: Poppins;
+}
+
+body{
+  margin: 0;
+  padding: 0px;
+  overflow: hidden;
+  color: white;
+}
+
+img{
+  width: 100%;
+}
+
+.center-vertical{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-horizontal{
+  display: flex;
+  align-items: center;
+}
+
+ul{
+  padding: 0;
+  list-style: none;
+}
+
+.container{
+  max-width: 1000px;
+  padding: 20px;
+  margin: 0 auto;
+}
