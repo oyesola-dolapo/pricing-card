@@ -1,9 +1,22 @@
 import PricingCard from "./components/pricingCard/PricingCard";
+import PricingCards from "./components/PricingCards/PricingCards";
+import UseEffectExamples from "./components/UseEffectExamples/UseEffectExamples";
 import styles from "./App.module.css";
+import { useState } from "react";
 
 function App() {
-  
-  const PriceCard = [
+  // const showPricingCard = true;
+  const [showPricingCards, setShowPricingCards] = useState(true);
+  const [showHeading, setShowHeading] = useState(true);
+
+  const updateShowPricingCards = () => {
+    setShowPricingCards(!showPricingCards);
+  };
+  const updateShowHeading = () => {
+    setShowHeading(!showHeading);
+  };
+
+  const cards = [
     {
       id: 1,
       label: "Start-Up",
@@ -38,21 +51,34 @@ function App() {
   return (
     <main>
       <div className={styles.bg}>
-        <div className={styles.info}>
-          <h1 className={styles.heading}>Choose Your Plan</h1>
-          <p className={styles.description}>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque est
-            quos deleniti veritatis. Laudantium, totam!
-          </p>
-        </div>
+        {showHeading && <h1 className={styles.heading}>Choose Your Plan</h1>}
+        <p className={styles.description}>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque est
+          quos deleniti veritatis. Laudantium, totam!
+        </p>
       </div>
-      <div className={`${styles.prices} container`}>
-        {PriceCard.map((card) => {
-          return <PricingCard key={card.id} card={card} />;
-        })}
+      <div className={styles["update-buttons"]}>
+        <button className={styles["update-button"]} onClick={updateShowHeading}>
+          Update Heading
+        </button>
+        <button
+          className={styles["update-button"]}
+          onClick={updateShowPricingCards}>
+          Update Pricing Crd
+        </button>
       </div>
+
+      {showPricingCards && <PricingCards cards={cards} />}
     </main>
   );
 }
+
+// function App() {
+//   return (
+//     <main>
+//       <UseEffectExamples />
+//     </main>
+//   );
+// }
 
 export default App;

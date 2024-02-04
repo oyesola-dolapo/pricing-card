@@ -2,6 +2,17 @@ import styles from "./PricingCard.module.css";
 import Button from "../Button/Button.jsx";
 import PropTypes from "prop-types";
 
+const randomizeArr = (array) => {
+  const cloned = [...array];
+  for (let i = cloned.length - 1; i >= 0; i--) {
+    const j = (Math.floor(Math.random() * (i + 1))
+    [(cloned[i], cloned[j])] = [
+      cloned[j],
+      cloned[i],
+    ]);
+  }
+};
+
 const PricingCard = ({ card }) => {
   const themeClasses = {
     "Start-Up": styles["card--startup"],
@@ -41,7 +52,9 @@ const PricingCard = ({ card }) => {
             );
           })}
         </ul>
-        <Button className={styles.card__button} class>Choose</Button>
+        <Button className={styles.card__button} class>
+          Choose
+        </Button>
       </div>
     </div>
   );

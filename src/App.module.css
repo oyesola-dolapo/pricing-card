@@ -5,18 +5,19 @@
   text-align: center;
 }
 
-.heading, .description{
-    max-width: 600px;
-    margin: 0 auto;
+.heading,
+.description {
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.heading{
- text-transform: uppercase;
- margin-bottom: 20px;
+.heading {
+  text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
-.description{
-    font-size: 1.2rem;
+.description {
+  font-size: 1.2rem;
 }
 
 .prices {
@@ -24,6 +25,29 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   position: relative;
-  top: -300px;
+  top: -260px;
   align-items: center;
+}
+
+.update-buttons {
+  position: relative;
+  top: -280px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.update-button {
+  color: black;
+  background-color: green;
+  border: none;
+  width: 15rem;
+  text-align: center;
+  height: 3rem;
+  font-weight: bold;
+}
+
+.block{
+  padding: 1rem;
 }
